@@ -15,6 +15,12 @@ abstract class Config {
           array(''),
           array('name' => '3-6 lat', 'n' => 5),
           array('name' => '7-10 lat', 'n' => 10),
+          array('name' => '11-16 lat', 'n' => 15),
+          array('name' => '17-23 lata', 'n' => 25),
+          array('name' => '24-100 lat', 'n' => 30),
+          ),
+        ),
+      
       
   
 }
