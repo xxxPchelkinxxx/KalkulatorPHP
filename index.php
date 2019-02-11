@@ -1,9 +1,9 @@
 <?php
 require_once 'core/config.php';
-// Если выбраны все поля
+// Jesli wybrane są wszystkie pola
 if (!empty($_POST['product']) && !empty($_POST['age']) && !empty($_POST['times']) && !empty($_POST['period'])) 
 {
-// Запоминаем номер выбранных option
+// Zapamiętujemy numer wybranych option
   $product_selected = $_POST['product'];
   $age_selected     = $_POST['age'];
   $times_selected   = $_POST['times'];
@@ -33,7 +33,7 @@ if (!empty($_POST['product']) && !empty($_POST['age']) && !empty($_POST['times']
           <div class="bpc_input">
               <selected name="product">
                   <?php
-                // <assiv option
+                // array option
                 $option = array(
                   'Wybierz produkt',
                   'Nalewka z propolisu',
