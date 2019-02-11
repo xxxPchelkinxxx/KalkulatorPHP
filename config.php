@@ -2,18 +2,18 @@
 abstract class Config {
 
   const Data = array (
-    // Продукты пчелы
+    // Produkty pszczoly
     'product' => array(
       array(''), //Первый элемент пустой
       array(
-        'name' => 'Nalewka z propolisu',
-        'name_negative' => 'nalewki z propolisu',
-        'unit' => array('krapla', 'krapli', 'krapel'), // Еденицы измерения со склонением
-        'vital' => array('butelka', 'butelki', 'butelek'), //Емкость со склонением
-        'volume' => 2700, // Количество капель в упаковке
-        'image' => '', //Изображение продукта
-        'age' => array( //Норма употреления исходя из возраста
-          array(''),
+        'name' => 'Nalewka z propolisu', // Nazwa produktu
+        'name_negative' => 'nalewki z propolisu', // Nazwa produktu w dopelniaczu
+        'unit' => array('krapla', 'krapli', 'krapel'), // Nazwa jednostki ze spadkiem.
+        'vital' => array('butelka', 'butelki', 'butelek'), //Nazwa zbiornika ze spadkiem
+        'volume' => 2700, // Ilość kropiel w butelce
+        'image' => '', // Изображение продукта
+        'age' => array( // Norma przyjmowania dla grup wiekowych
+          array(''), 
           array('name' => '3-6 lat', 'n' => 5),
           array('name' => '7-10 lat', 'n' => 10),
           array('name' => '11-16 lat', 'n' => 15),
@@ -166,22 +166,22 @@ abstract class Config {
             ),
         ),
       ),
-    // Сколько раз в день принимать
+    // Ile razy dziennie przyjmowac
     
   'times' => array(
-    array(''), //Первый массив пустой
-    array('n' =>1, 'name' => '1 raz'), // Умножаем на 1
+    array(''), //Pierwszy massyw jest pusty
+    array('n' =>1, 'name' => '1 raz'), // Mnozymy na 1
     array('n' => 2, 'name' => '2 razy'),
     array('n' = > 3, 'name' => '3 razy'),
   ),
     
-    // Период приема
+    // Okres przyjmowania
     'period' => array(
-      array(''), //Первый массив пустой
-      array('n' => 14, 'name' => '14 dni'), //Умножаем на 14 дней
-      array('n' => 30, 'name' => '1 miesiąc'), 
-      array('n' => 60, 'name' => '3 miesiące'), //Умножаем на 60 дней, так как 30 дней перерыв в приеме
-      array('n' => 90, 'name' => '6 miesięcy'), // Умножаем на 90, так как 3 перерыва по 30 дней
+      array(''), //
+      array('n' => 14, 'name' => '14 dni'), // nozymy na 14
+      array('n' => 30, 'name' => '1 miesiąc'), // na 30
+      array('n' => 60, 'name' => '3 miesiące'), // na 60
+      array('n' => 90, 'name' => '6 miesięcy'), // na 90
       ),
   );
       
