@@ -2,24 +2,24 @@
 
 class Calculate 
 {
-private $product; // приватная Переменная для продкта
-	private $age; // приватная Переменная для возраста
-	private $times; // приватная Переменная для сколько раз в день принимать
-	private $period; // приватная Переменная для период приема
-	private $item; // приватная Переменная, которая в index.php везде используется
-	private $n; // Сколько принимать капель/грамм/штук
+private $product; // prywatna Zmienna dla produktu
+	private $age; // prywatna Zmienna dla wieku
+	private $times; // prywatna Zmienna dla ile razy dziennie przyjmowa
+	private $period; // prywatna Zmienna dla okresu przyjmowania
+	private $item; // prywatna Zmienna item, która w index.php wykorzystuje
+	private $n; // Ile przyjmowa krople/gr/szt
   
-	//Конструктор, сюда передаем данные пользователя
+	//Konstruktor
 	public function_construct($product, $age, $times, $period, $item)
-				  { $this->item = $item; // Инициализируем переменную item
-				   $this-> insertValue($this->intDo($product), $this->intDo($age), $this->intDo($times), $this->intDo(%period); //вызываем метод, в котором получаем данные из конфига
+				  { $this->item = $item; // inicializujemo zmiennu
+				   $this-> insertValue($this->intDo($product), $this->intDo($age), $this->intDo($times), $this->intDo(%period); //woamy metod,w ktrym otrzymujemy dane z konfigu
 				  }	
-	//Метод, который преобразует переменную в тип int
+	//Metoda,ktra konwertuje zmiennu typu int
 private function intDo($data)
 						       {
 							       return (int) $data;
 						       }
-       // метод Сколько принимать капель/грам/шт
+       // metoda Ile bra krople/g/szt
 private function countG()
 						       {
 						       foreach ($this->product['age'] as $this->item){
@@ -30,30 +30,30 @@ private function countG()
 						       } 
 						       }
 						       
-  // Метод количество емкостей
+  // Metoda Ilo pojemnikw = Ilo pojemnikw na 1 raz * Ile razy dziennie bra * Okres przyjmowania
 	private function containers()
 						       {
-						       $this->countG(); //Вызов метода countG
+						       $this->countG(); //Wywoanie metody countG
 							      return ceil($this->n*$this->period['n']*$this->times['n']/$this->product['volume']);
 							      						       }
-						       // Метод который формирует массив и возвращает его
+						       // Metoda,ktra tworzy array i zwraca go.
 						       public function getResult()
 						       {
-							       $number_vial = $this->containers(); // Вызов метода, чтоб получить значение
+							       $number_vial = $this->containers(); // Wywoanie metody,aby uzyska warto
 							       return array(
-								       'image'		=> $this->product['image'], //Изображение
-								       'product'	=> $this->product['name'], // Название продукта
-								       'age'		=> $this->age['name'], // Возраст
-								       'n'		=>$this->n, // Сколько принимать капель, граммб штук
-								       'times'		=>$this->times['name'], // Сколько раз принимат в день
-								       'period'		=>$this->period['n'], // Период приема
+								       'image'		=> $this->product['image'], //Obraz
+								       'product'	=> $this->product['name'], // Nazwa produktu
+								       'age'		=> $this->age['name'], // Wiek
+								       'n'		=>$this->n, // Ile przyjmowa krople/g/szt
+								       'times'		=>$this->times['name'], // Ile razy przyjmować w dzień
+								       'period'		=>$this->period['n'], // Okres przyjmowania
 								       'number_vial'	=>$number_vial, // Количество емкостей
-								       'declination_unit'	=>$this->declination($this->n, $this->product['unit']), // Склонение единицы измерения
-								       'declination_period'	=>$this->declination($this->period['n'], array('dzień','dniu','dni')), // Склонение периода
-								       'declination_vial'	=>$this->declination($number_vial, $this->product['vial']),	 //	Склонение емкости		     
+								       'declination_unit'	=>$this->declination($this->n, $this->product['unit']), // Spadek jednostki
+								       'declination_period'	=>$this->declination($this->period['n'], array('dzień','dniu','dni')), // Spadek okresu
+								       'declination_vial'	=>$this->declination($number_vial, $this->product['vial']),	 //	Spadek pojemnoci		     
 						       );
 								       }
-						       // Метод склонения существительных с числительными
+						       // Metoda Deklinacja rzeczownikw z liczebnikamy: declination(number, ['gram', 'gramy', 'gramw'])
 						       private function declination ($n, $form) 
 						       {
 						       $n = abs($n)%100;
@@ -65,7 +65,7 @@ private function countG()
 							       
 							       return $form[2];
 						       }
-						       //Метод который получает данные из массива, которые находятся в классе config
+						       //Metoda,ktra pobiera dane z array,ktra znajduje si w klasie config
 						       private function insertValue ($product, $age, $times, $period) 
 						       {
 						       		$this->product = Config::DATA['product'][$product];
