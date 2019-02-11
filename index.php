@@ -64,7 +64,92 @@ if (!empty($_POST['product']) && !empty($_POST['age']) && !empty($_POST['times']
           </div>
 </div>
 
+<div class="bpc_field">
+                <div class="bpc_label">
+                    <label>Ile lat ma czlowiek:</label>
+                </div>
+                <div class="bpc_input">
+                    <select name="age">
+                        <?php
+                        // Array option
+                        $option = array(
+                            'Wybierz ile lat ma człowiek',
+                            '3-6 lat',
+                            '7-10 lat',
+                            '11-16 lat',
+                            '17-23 lata',
+                            '24-100 lat',
+                        );
+                        // Formujemy option
+                        foreach ($option as $key => $item) {
+                            if ($key > 0) {
+                                $key == $age_selected ? $selected = 'selected' : $selected = ''; 
+                                echo '<option value="'.$key.'" '.$selected.'>'.$item.'</option>';
+                            } else {
+                                echo '<option selected disabled>'.$item.'</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
 
+            <div class="bpc_field">
+                <div class="bpc_label">
+                    <label>Ile razy dziennie przyjmować:</label>
+                </div>
+                <div class="bpc_input">
+                    <select name="times">
+                        <?php
+                        // array option
+                        $option = array(
+                            'Wybierz ile razy dziennie przyjmować',
+                            '1 raz(profilaktycznie)',
+                            '2 razy',
+                            '3 razy',
+                        );
+                        // Formujemy option
+                        foreach ($option as $key => $item) {
+                            if ($key > 0) {
+                                $key == $times_selected ? $selected = 'selected' : $selected = '';
+                                echo '<option value="'.$key.'" '.$selected.'>'.$item.'</option>';
+                            } else {
+                                echo '<option selected disabled>'.$item.'</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+
+            <div class="bpc_field">
+                <div class="bpc_label">
+                    <label>Okres przyjmowania:</label>
+                </div>
+                <div class="bpc_input">
+                    <select name="period">
+                        <?php
+                        // Array option
+                        $option = array(
+                            'Wybierz okres przyjmowania',
+                            '14 dni',
+                            '1 miesiąc',
+                            '3 miesięce',
+                            '6 miesiący',
+                        );
+                        // Formujemy option
+                        foreach ($option as $key => $item) {
+                            if ($key > 0) {
+                                $key == $period_selected ? $selected = 'selected' : $selected = ''; 
+                                echo '<option value="'.$key.'" '.$selected.'>'.$item.'</option>';
+                            } else {
+                                echo '<option selected disabled>'.$item.'</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
 
 
 </body>
