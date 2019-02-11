@@ -150,7 +150,38 @@ if (!empty($_POST['product']) && !empty($_POST['age']) && !empty($_POST['times']
                     </select>
                 </div>
             </div>
+<button class="bpc_calculator" type="submit">Oblicz</button>
+</form>
+</div>
 
+// Jeśli wybrane są wszystkie pola
+if (!empty($_POST['product']) && !empty($_POST['age']) && !empty($_POST['times']) && !empty($_POST['period'])) 
+{
+// Obliczenie
+require_once 'core/calculate_class.php';       
+
+$calc = new Calculate($_POST['product'], $_POST['age'], $_POST['times'], $_POST['period'], $item);
+$unswer = $calc->getResult();
+
+// Wyswietliamy wynik
+?>
+      <div class="bpc_result">
+          <div class="bpc_result_row">
+            <div class="bpc_result_left">
+              <img src="<?php echo 'images/'.$unswer['image']; ?>">
+            </div>
+            <div class="bpc_result_right">
+              <div class="bpc_result_product"><span><?php echo $unswer['product']; ?></span></div>
+              <div class="bpc_result_age">Wiek <span><?php echo $unswer['age']; ?></span></div>
+              <div class="bpc_result_text">Przyjmowanie po <?php echo $unswer['n']; ?> <?php echo $unswer['declination_unit']; ?> <?php echo $unswer['times']; ?> na dzien. <br> Na <?php echo $unswer['period']; ?> <?php echo $unswer['declination period']; ?> potrzebno <?php echo $unswer['number_vial']; ?> <?php echo $unswer['declination_vial']; ?>.</div>
+            </div>
+            </div>
+        </div>
+    <?php  
+
+}
+?>
+</div>
 
 </body>
 </html>
