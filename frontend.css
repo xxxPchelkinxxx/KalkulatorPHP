@@ -1,1 +1,58 @@
+body {
+  front-family: Arial, sans-serif;
+  front-size: 16px;
+}
 
+.bpc,
+.bpc *,
+.bpc :before,
+.bpc :after,
+.bpc_modal,
+.bpc_modal,
+.bpc_modal *,
+.bpc_modal :before,
+.bpc_modal :after,
+.bpcm,
+.bpcm *,
+.bpcm :before,
+.bpcm :after {
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+    outline: none;
+}
+
+.bpc_body {
+    margin:0 0 20px;
+    padding: 10px;
+    border: 2px solid #f6b454;
+    border-radius: 4px;
+    background: #eee;
+}
+/* Formularz kalkulatora */
+.bpc_headline {
+    margin: 0 0 40px;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    color: #f6b454;
+}
+.bpc_field {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 10px;
+}
+.bpc_label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 250px;
+        -ms-flex: 0 0 250px;
+            flex: 0 0 250px;
+}
+.bpc_label label {
+    display: block;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 30px;
+}
